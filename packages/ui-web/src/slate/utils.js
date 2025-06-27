@@ -50,7 +50,7 @@ export const isNodeEmpty = (el, options = {}) => {
       return false;
 
     case "code-block":
-      return el.children[0].text.trim() === "";
+      return el.code.trim() === "";
 
     default: {
       if (el.text != null) return trim ? el.text.trim() === "" : el.text === "";
