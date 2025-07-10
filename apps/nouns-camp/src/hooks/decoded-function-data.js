@@ -1,4 +1,4 @@
-import { getAbiItem, decodeFunctionData } from "viem";
+import { getAbiItem, decodeFunctionData, parseAbiItem } from "viem";
 import useEtherscanContractInfo from "@/hooks/etherscan-contract-info";
 
 const decodeCalldataWithAbi = ({ abi, calldata }) => {
@@ -26,13 +26,20 @@ const decodeCalldataWithAbi = ({ abi, calldata }) => {
 };
 
 const useDecodedFunctionData = (
-  { target, calldata },
+  { target, calldata, signature },
   { enabled = false } = {},
 ) => {
   const contractInfo = useEtherscanContractInfo(target, { enabled });
 
   const abi = contractInfo?.abi;
   const proxyImplementation = contractInfo?.proxyImplementation;
+
+  // if signature is malformed, should not try to decode with calldata
+  try {
+    parseAbiItem(`function ${signature}`);
+  } catch (error) {
+    return null;
+  }
 
   const decodedFunctionData =
     abi == null ? null : decodeCalldataWithAbi({ abi, calldata });

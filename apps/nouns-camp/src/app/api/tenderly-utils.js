@@ -75,23 +75,41 @@ export const parseProposalAction = ({ target, value, signature, calldata }) => {
       value: value || "0",
     };
   } catch (error) {
-    if (
-      error.name === "PositionOutOfBoundsError" ||
-      error.name === "UnknownSignatureError"
-    ) {
+    if (error.name === "PositionOutOfBoundsError") {
       return {
         to: target,
         input: calldata,
         value: value || "0",
       };
     }
+
     throw error;
   }
 };
 
 export const fetchSimulationBundle = async (unparsedTxs) => {
   const { address: executorAddress } = resolveIdentifier("executor");
-  const parsedTxs = unparsedTxs.map((t) => parseProposalAction(t));
+
+  let parsedTxs;
+  try {
+    parsedTxs = unparsedTxs.map((t) => parseProposalAction(t));
+  } catch (error) {
+    if (error.name === "UnknownSignatureError")
+      return new Response(
+        JSON.stringify({
+          error: "simulation-error",
+          reason: error.message,
+        }),
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+    else throw error;
+  }
+
   const parsedTransactions = parsedTxs.map((transaction) => {
     return {
       ...transaction,
