@@ -47,7 +47,6 @@ const subgraphFetch = async (query) => {
 };
 
 export const fetchFlowVotes = async (startTimestamp, endTimestamp) => {
-  return []; // Disable flows subgraph calls
   if (CHAIN_ID !== 1) return [];
 
   // For now we ignore votes on specific projects, just top level flows
