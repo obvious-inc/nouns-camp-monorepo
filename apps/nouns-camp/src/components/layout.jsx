@@ -71,8 +71,12 @@ const Layout = ({
     }
     {...props}
   >
+    <Banner>
+      <div style={{ flex: 1, textAlign: "center" }}>
+        Camp will be sunset on September 30, 2026.
+      </div>
+    </Banner>
     <NavBar navigationStack={navigationStack} actions={actions} />
-    <Banner>Camp will be sunset on September 30, 2026.</Banner>
     {scrollView ? (
       <div
         css={css({
