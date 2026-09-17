@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 import { useFetch } from "@shades/common/react";
 import Link from "@shades/ui-web/link";
 import { Cross as CrossIcon } from "@shades/ui-web/icons";
+import Banner from "@/components/banner";
 
 const AppUpdateBanner = () => {
   const [isDismissed, setDismissed] = React.useState(false);
@@ -39,20 +40,7 @@ const AppUpdateBanner = () => {
         })
       }
     >
-      <div
-        css={(t) =>
-          css({
-            color: t.colors.textAccent,
-            display: "flex",
-            alignItems: "center",
-            padding: "0.8rem 1.2rem",
-            background: t.colors.primaryTransparent,
-            fontSize: t.text.sizes.small,
-            minHeight: "3.8rem",
-            transition: "0.25s all ease-out",
-          })
-        }
-      >
+      <Banner>
         <div style={{ flex: 1, minWidth: 0 }}>
           New version of Camp available.{" "}
           <Link underline component="a" href="/">
@@ -69,7 +57,7 @@ const AppUpdateBanner = () => {
             style={{ width: "1.5rem", height: "auto", margin: "auto" }}
           />
         </button>
-      </div>
+      </Banner>
     </div>
   );
 };

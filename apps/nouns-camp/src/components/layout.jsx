@@ -34,6 +34,7 @@ import {
 } from "@/components/auction-dialog";
 import AccountAvatar from "@/components/account-avatar";
 import LogoSymbol from "@/components/logo-symbol";
+import Banner from "@/components/banner";
 import { formatEther } from "viem";
 import useTreasuryData from "@/hooks/treasury-data";
 import useEnsName from "@/hooks/ens-name";
@@ -71,6 +72,7 @@ const Layout = ({
     {...props}
   >
     <NavBar navigationStack={navigationStack} actions={actions} />
+    <Banner>Camp will be sunset on September 30, 2026.</Banner>
     {scrollView ? (
       <div
         css={css({
