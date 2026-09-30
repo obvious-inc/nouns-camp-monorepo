@@ -1,13 +1,8 @@
-# Nouns Camp monorepo
+# Nouns Camp
 
-👋
+Nouns Camp sunset on September 30, 2026. This repository now serves a static
+farewell page at [nouns.camp](https://www.nouns.camp/). The previous application
+remains available in Git history.
 
-[Nouns Camp](https://www.nouns.camp/) at [apps/nouns-camp](https://github.com/obvious-inc/frontend-monorepo/tree/main/apps/nouns-camp)
-
-## Development
-
-### LLM Tools
-
-This repo includes an `AI-CONTEXT.md` file with project-specific guidelines for AI coding assistants. Point your LLM tools to this file for better context and code consistency.
-
-For tools expecting specific filenames, consider creating a symlink (e.g., `ln -s AI-CONTEXT.md TOOL_SPECIFIC_FILENAME`).
+Both Vercel projects use `apps/nouns-camp` as their root directory. Its
+`vercel.json` serves `public/` directly, without an app build or runtime.

@@ -1,7 +1,8 @@
 node_modules
 dist
-.env
-.env.local
+apps/nouns-camp/reports/
+apps/nouns-camp/public/*.map
+.env*
 .vercel
 .next
 .turbo

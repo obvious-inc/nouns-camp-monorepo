@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta
+      name="description"
+      content="Nouns Camp sunset on September 30, 2026. Continue with Nouns at nouns.wtf."
+    />
+    <title>Nouns Camp has sunset</title>
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #252324;
+        background: #f7f5ef;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 3rem 1.5rem;
+      }
+
+      main {
+        width: min(100%, 42rem);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 0.85rem;
+        height: 0.85rem;
+        background: #e44842;
+        border-radius: 0.2rem;
+      }
+
+      h1 {
+        margin: 2.25rem 0 1.25rem;
+        font-size: clamp(2.8rem, 8vw, 5rem);
+        line-height: 1.04;
+        letter-spacing: -0.055em;
+      }
+
+      p {
+        max-width: 33rem;
+        margin: 0;
+        color: #5b5755;
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        line-height: 1.6;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-top: 2.5rem;
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.25rem;
+        padding: 0.85rem 1.2rem;
+        border: 1px solid #252324;
+        border-radius: 0.55rem;
+        color: #252324;
+        font-weight: 650;
+        text-decoration: none;
+        transition: background-color 0.15s ease, color 0.15s ease;
+      }
+
+      a:first-child,
+      a:hover {
+        color: #fff;
+        background: #252324;
+      }
+
+      a:first-child:hover {
+        background: #484342;
+      }
+
+      a:focus-visible {
+        outline: 3px solid #e44842;
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 430px) {
+        nav {
+          flex-direction: column;
+        }
+
+        a {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="eyebrow">Nouns Camp</span>
+      <h1>Thanks for being part of Camp.</h1>
+      <p>
+        Nouns Camp sunset on September 30, 2026. The Nouns community continues
+        at the official Nouns site.
+      </p>
+      <nav aria-label="Continue with Nouns">
+        <a href="https://nouns.wtf/">Visit Nouns ↗</a>
+        <a href="https://nouns.wtf/vote/996">View proposal 996 ↗</a>
+      </nav>
+    </main>
+  </body>
+</html>
